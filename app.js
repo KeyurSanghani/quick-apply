@@ -23,7 +23,7 @@ authenticatedRoutes.use('/users', UserRoutes);
 app.use('/api', authenticatedRoutes);
 
 // Connect to MongoDB and start server
-mongoose.connect("mongodb+srv://admin:admin@node.wzztqna.mongodb.net/?retryWrites=true&w=majority&appName=node")
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB");
 
@@ -34,13 +34,3 @@ mongoose.connect("mongodb+srv://admin:admin@node.wzztqna.mongodb.net/?retryWrite
   .catch((error) => {
     console.error('Error connecting to MongoDB:', error);
   });
-
-
-
-// vivansh@vivansh /var/www/node master $ node -v
-// v20.11.1
-// vivansh@vivansh /var/www/node master $ npm -v
-// 10.2.4
-// vivansh@vivansh /var/www/node master $ yarn -v
-// 1.22.22
-// vivansh@vivansh /var/www/node master $ 
